@@ -1,0 +1,56 @@
+﻿import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Practice_11_1 extends JFrame{
+	JCheckBox jb = new JCheckBox("버튼 비활성화");
+	JCheckBox cb = new JCheckBox("버튼 숨기기");
+	JButton b = new JButton("test button");
+
+	public Practice_11_1() {
+		setTitle("체크박스 예제");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+
+		jb.setBorderPainted(true);
+		cb.setBorderPainted(true);
+		MyItemListener listener = new MyItemListener();
+		jb.addItemListener(listener);
+		cb.addItemListener(listener);
+
+		c.add(jb);
+		c.add(cb);
+		c.add(b);
+		setSize(300,400);
+		setVisible(true);
+	}
+	
+	class MyItemListener implements ItemListener{
+		public void itemStateChanged(ItemEvent e) {
+			if(e.getStateChange() == ItemEvent.SELECTED) {
+				if(e.getItem() == jb) {
+					b.setEnabled(false);
+				}
+				else {
+					b.setVisible(false);
+				}
+			}
+			else {
+				if(e.getItem() == jb) {
+					b.setEnabled(true);
+				}
+				else {
+					b.setVisible(true);
+				}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Practice_11_1();
+	}
+
+}
+
