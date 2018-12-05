@@ -1,14 +1,14 @@
-import java.awt.*;
+ï»¿import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class Practice_11_3 extends JFrame 
 {
     int[] mo = {50000, 10000, 1000, 500, 100, 50, 10, 1};
-    String[] str = {"±İ¾×", "¿À¸¸¿ø", "¸¸¿ø", "Ãµ¿ø", "500¿ø", "100¿ø", "50¿ø", "10¿ø", "1¿ø"};
+    String[] str = {"ê¸ˆì•¡", "ì˜¤ë§Œì›", "ë§Œì›", "ì²œì›", "500ì›", "100ì›", "50ì›", "10ì›", "1ì›"};
     JLabel jl = new JLabel();
     JTextField[] jt = new JTextField[str.length];
-    JButton jb = new JButton("°è»ê");
+    JButton jb = new JButton("ê³„ì‚°");
 
     public Practice_11_3() 
     {
